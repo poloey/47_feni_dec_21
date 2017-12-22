@@ -11,7 +11,7 @@
           <div class="card m-3">
             <div class="card-body">
               <h2><a href="{{route('post', ['id' => $post->id])}}">{{$post->title}}</a> by <a href="{{route('author', ['id' => $post->user->id])}}">{{$post->user->name}}</a> on <span class="text-muted">Dec 12, 2017</span></h2>
-              <p>{{ str_limit( $post->content, 150 )}}</p>
+              <p>{{ Helpers::excerpt($post->content )}}</p>
               <p><a href="{{route('post', ['id' => $post->id])}}" class="btn btn-info">read more</a></p>
             </div>
           </div>
